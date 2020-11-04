@@ -1,5 +1,9 @@
 # TrabajoFinal
--Christian Joel Cutipa Cañapataña
--Omar Valle Guzman
--Jairo Andree Alvarez Sanchez
--Cristopher
+
+.Christian Joel Cutipa Cañapataña
+
+.Omar Valle Guzman
+
+.Jairo Andree Alvarez Sanchez
+
+.Cristopher
