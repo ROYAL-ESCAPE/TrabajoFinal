@@ -16,9 +16,9 @@ namespace TrabajoFinal {
 	{
 	public:
 		CControladora^ controladora = gcnew CControladora();
-		Bitmap^ bmpSolido = gcnew Bitmap("MATERIALES//bmpSolido.png");
-		Bitmap^ bmpBase = gcnew Bitmap("MATERIALES//bmpSuelo.png");
-		Bitmap^ bmpDestruible = gcnew Bitmap("MATERIALES//bmpDestruible.png");
+		Bitmap^ bmpSolido = gcnew Bitmap("MATERIALES//ladrillo2.png");
+		Bitmap^ bmpBase = gcnew Bitmap("MATERIALES//grass.png");
+		Bitmap^ bmpDestruible = gcnew Bitmap("MATERIALES//Ladrillo1.png");
 		Juego(void)
 		{
 			InitializeComponent();
@@ -66,19 +66,19 @@ namespace TrabajoFinal {
 			// 
 			// Juego
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"Juego";
 			this->Text = L"Juego";
-			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &Juego::Juego_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void Juego_Load(System::Object^ sender, System::EventArgs^ e) {
-		
+
 	}
 	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
 		Graphics^ graficador = this->CreateGraphics();

@@ -57,7 +57,7 @@ namespace TrabajoFinal {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -82,9 +82,10 @@ namespace TrabajoFinal {
 			// 
 			// btn_salir
 			// 
-			this->btn_salir->Location = System::Drawing::Point(421, 271);
+			this->btn_salir->Location = System::Drawing::Point(595, 363);
+			this->btn_salir->Margin = System::Windows::Forms::Padding(4);
 			this->btn_salir->Name = L"btn_salir";
-			this->btn_salir->Size = System::Drawing::Size(89, 23);
+			this->btn_salir->Size = System::Drawing::Size(131, 42);
 			this->btn_salir->TabIndex = 8;
 			this->btn_salir->Text = L"Salir";
 			this->btn_salir->UseVisualStyleBackColor = true;
@@ -92,9 +93,10 @@ namespace TrabajoFinal {
 			// 
 			// btn_creditos
 			// 
-			this->btn_creditos->Location = System::Drawing::Point(421, 229);
+			this->btn_creditos->Location = System::Drawing::Point(590, 283);
+			this->btn_creditos->Margin = System::Windows::Forms::Padding(4);
 			this->btn_creditos->Name = L"btn_creditos";
-			this->btn_creditos->Size = System::Drawing::Size(89, 23);
+			this->btn_creditos->Size = System::Drawing::Size(131, 45);
 			this->btn_creditos->TabIndex = 7;
 			this->btn_creditos->Text = L"Creditos";
 			this->btn_creditos->UseVisualStyleBackColor = true;
@@ -102,9 +104,10 @@ namespace TrabajoFinal {
 			// 
 			// btn_jugar
 			// 
-			this->btn_jugar->Location = System::Drawing::Point(421, 145);
+			this->btn_jugar->Location = System::Drawing::Point(585, 142);
+			this->btn_jugar->Margin = System::Windows::Forms::Padding(4);
 			this->btn_jugar->Name = L"btn_jugar";
-			this->btn_jugar->Size = System::Drawing::Size(89, 23);
+			this->btn_jugar->Size = System::Drawing::Size(148, 47);
 			this->btn_jugar->TabIndex = 6;
 			this->btn_jugar->Text = L"Jugar";
 			this->btn_jugar->UseVisualStyleBackColor = true;
@@ -114,20 +117,21 @@ namespace TrabajoFinal {
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(45, 38);
+			this->pictureBox1->Location = System::Drawing::Point(499, 61);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(327, 51);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
 			this->pictureBox1->TabIndex = 9;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &MenuPrincipal::pictureBox1_Click);
 			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(634, 40);
+			this->pictureBox2->Location = System::Drawing::Point(977, 61);
+			this->pictureBox2->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(192, 128);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
@@ -136,9 +140,10 @@ namespace TrabajoFinal {
 			// 
 			// btn_instrucciones_aparecer
 			// 
-			this->btn_instrucciones_aparecer->Location = System::Drawing::Point(421, 184);
+			this->btn_instrucciones_aparecer->Location = System::Drawing::Point(595, 219);
+			this->btn_instrucciones_aparecer->Margin = System::Windows::Forms::Padding(4);
 			this->btn_instrucciones_aparecer->Name = L"btn_instrucciones_aparecer";
-			this->btn_instrucciones_aparecer->Size = System::Drawing::Size(89, 23);
+			this->btn_instrucciones_aparecer->Size = System::Drawing::Size(136, 37);
 			this->btn_instrucciones_aparecer->TabIndex = 11;
 			this->btn_instrucciones_aparecer->Text = L"Instrucciones";
 			this->btn_instrucciones_aparecer->UseVisualStyleBackColor = true;
@@ -146,9 +151,10 @@ namespace TrabajoFinal {
 			// 
 			// btn_instrucciones_desaparecer
 			// 
-			this->btn_instrucciones_desaparecer->Location = System::Drawing::Point(421, 184);
+			this->btn_instrucciones_desaparecer->Location = System::Drawing::Point(597, 219);
+			this->btn_instrucciones_desaparecer->Margin = System::Windows::Forms::Padding(4);
 			this->btn_instrucciones_desaparecer->Name = L"btn_instrucciones_desaparecer";
-			this->btn_instrucciones_desaparecer->Size = System::Drawing::Size(89, 23);
+			this->btn_instrucciones_desaparecer->Size = System::Drawing::Size(136, 37);
 			this->btn_instrucciones_desaparecer->TabIndex = 12;
 			this->btn_instrucciones_desaparecer->Text = L"Instrucciones";
 			this->btn_instrucciones_desaparecer->UseVisualStyleBackColor = true;
@@ -156,20 +162,23 @@ namespace TrabajoFinal {
 			// 
 			// pictureBox3
 			// 
-			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(634, 204);
+			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox3->Location = System::Drawing::Point(951, 219);
+			this->pictureBox3->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(192, 139);
+			this->pictureBox3->Size = System::Drawing::Size(256, 171);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox3->TabIndex = 13;
 			this->pictureBox3->TabStop = false;
 			// 
 			// MenuPrincipal
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
-			this->ClientSize = System::Drawing::Size(556, 533);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(1262, 673);
 			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->btn_instrucciones_desaparecer);
 			this->Controls->Add(this->pictureBox1);
@@ -178,9 +187,9 @@ namespace TrabajoFinal {
 			this->Controls->Add(this->btn_jugar);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->btn_instrucciones_aparecer);
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MenuPrincipal";
-			this->Text = L"MenuPrincipal";
+			this->Text = L"Royale Escape";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -201,15 +210,17 @@ namespace TrabajoFinal {
 	private: System::Void Salir(System::Object^ sender, System::EventArgs^ e) {
 		Close();
 	}
-private: System::Void btn_instrucciones_desaparecer_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Width = 572;
-	btn_instrucciones_desaparecer->Visible = false;
-	btn_instrucciones_aparecer->Visible = true;
-}
-private: System::Void btn_instrucciones_aparecer_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Width = 980;
-	btn_instrucciones_desaparecer->Visible = true;
-	btn_instrucciones_aparecer->Visible = false;
-}
+	private: System::Void btn_instrucciones_desaparecer_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Width = 572;
+		btn_instrucciones_desaparecer->Visible = false;
+		btn_instrucciones_aparecer->Visible = true;
+	}
+	private: System::Void btn_instrucciones_aparecer_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Width = 980;
+		btn_instrucciones_desaparecer->Visible = true;
+		btn_instrucciones_aparecer->Visible = false;
+	}
+	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 };
 }

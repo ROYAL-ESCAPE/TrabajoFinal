@@ -20,4 +20,3 @@ public:
 		escenario->PintarMatriz(graficador, bmpSolido, bmpDestruible);
 	}
 };
-

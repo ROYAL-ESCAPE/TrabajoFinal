@@ -43,7 +43,7 @@ namespace TrabajoFinal {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -62,10 +62,10 @@ namespace TrabajoFinal {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(478, 12);
+			this->pictureBox1->Location = System::Drawing::Point(1106, 21);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(90, 87);
+			this->pictureBox1->Size = System::Drawing::Size(120, 107);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
@@ -73,21 +73,24 @@ namespace TrabajoFinal {
 			// txt_title_creditos
 			// 
 			this->txt_title_creditos->AutoSize = true;
-			this->txt_title_creditos->Font = (gcnew System::Drawing::Font(L"Showcard Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->txt_title_creditos->BackColor = System::Drawing::Color::Transparent;
+			this->txt_title_creditos->Font = (gcnew System::Drawing::Font(L"Sitka Subheading", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_title_creditos->Location = System::Drawing::Point(239, 27);
+			this->txt_title_creditos->ForeColor = System::Drawing::Color::Cornsilk;
+			this->txt_title_creditos->Location = System::Drawing::Point(576, 21);
+			this->txt_title_creditos->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->txt_title_creditos->Name = L"txt_title_creditos";
-			this->txt_title_creditos->Size = System::Drawing::Size(119, 27);
+			this->txt_title_creditos->Size = System::Drawing::Size(178, 58);
 			this->txt_title_creditos->TabIndex = 1;
 			this->txt_title_creditos->Text = L"Creditos";
 			this->txt_title_creditos->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// pictureBox2_atras
 			// 
-			this->pictureBox2_atras->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2_atras.Image")));
-			this->pictureBox2_atras->Location = System::Drawing::Point(21, 12);
+			this->pictureBox2_atras->Location = System::Drawing::Point(28, 15);
+			this->pictureBox2_atras->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox2_atras->Name = L"pictureBox2_atras";
-			this->pictureBox2_atras->Size = System::Drawing::Size(59, 52);
+			this->pictureBox2_atras->Size = System::Drawing::Size(79, 64);
 			this->pictureBox2_atras->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox2_atras->TabIndex = 2;
 			this->pictureBox2_atras->TabStop = false;
@@ -95,12 +98,15 @@ namespace TrabajoFinal {
 			// 
 			// Creditos
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(580, 363);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(1262, 673);
 			this->Controls->Add(this->pictureBox2_atras);
 			this->Controls->Add(this->txt_title_creditos);
 			this->Controls->Add(this->pictureBox1);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"Creditos";
 			this->Text = L"Creditos";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -112,6 +118,6 @@ namespace TrabajoFinal {
 #pragma endregion
 	private: System::Void pictureBox2_atras_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-		
+
 	};
 }

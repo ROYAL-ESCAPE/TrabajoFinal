@@ -1,8 +1,8 @@
 #pragma once
 #include<ctime>
 #include<stdlib.h>
-#define filas 35
-#define columnas 37
+#define filas 27
+#define columnas 47
 using namespace System::Drawing;
 ref class CEscenario
 {
@@ -26,11 +26,11 @@ public:
 		{
 			for (short j = 0; j < columnas; j++)
 			{
-				if (i == 0 || j == 0 || i==filas-1||j==columnas-1) {//borde del laberinto
+				if (i == 0 || j == 0 || i == filas - 1 || j == columnas - 1) {//borde del laberinto
 					matriz[i][j] = 1;
 				}
 				else {
-					if ((i==1 &&(j==1||j==2))||(j==1 && i==2)||(i==filas-2 && (j==columnas-3||j==columnas-2)) ||(i == filas - 3 && j == columnas - 2)) {
+					if ((i == 1 && (j == 1 || j == 2)) || (j == 1 && i == 2) || (i == filas - 2 && (j == columnas - 3 || j == columnas - 2)) || (i == filas - 3 && j == columnas - 2)) {
 						matriz[i][j] = 2;
 					}
 					else {
@@ -62,7 +62,7 @@ public:
 			X = 0;
 			for (short j = 0; j < columnas; j++)
 			{
-				if (matriz[i][j]==1) {
+				if (matriz[i][j] == 1) {
 					graficador->DrawImage(bmpSolido, X, Y, 20, 20);
 				}
 				else

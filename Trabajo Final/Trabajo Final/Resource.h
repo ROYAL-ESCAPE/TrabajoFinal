@@ -1,3 +1,3 @@
 //{{NO_DEPENDENCIES}}
-// Archivo de inclusión generado de Microsoft Visual C++.
-// Usado por app.rc
+// Microsoft Visual C++ generated include file.
+// Used by app.rc

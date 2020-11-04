@@ -1,5 +1,5 @@
-// pch.cpp: el archivo de código fuente correspondiente al encabezado precompilado
+// pch.cpp: source file corresponding to the pre-compiled header
 
 #include "pch.h"
 
-// Cuando se utilizan encabezados precompilados, se requiere este archivo de código fuente para que la compilación se realice correctamente.
+// When you are using pre-compiled headers, this source file is necessary for compilation to succeed.
