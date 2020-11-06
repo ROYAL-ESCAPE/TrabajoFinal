@@ -18,19 +18,19 @@ public:
 	}
 	void generarMatriz() {
 		srand(time(NULL));
-		for (short i = 0; i < filas; i++)
+		for (short i = 0; i < filas; i++)//se inicializa la  matriz
 		{
 			matriz[i] = new int[columnas];
 		}
-		for (short i = 0; i < filas; i++)
+		for (short i = 0; i < filas; i++)//para cada fila
 		{
-			for (short j = 0; j < columnas; j++)
+			for (short j = 0; j < columnas; j++)//para cada columna
 			{
 				if (i == 0 || j == 0 || i == filas - 1 || j == columnas - 1) {//borde del laberinto
 					matriz[i][j] = 1;
 				}
 				else {
-					if ((i == 1 && (j == 1 || j == 2)) || (j == 1 && i == 2) || (i == filas - 2 && (j == columnas - 3 || j == columnas - 2)) || (i == filas - 3 && j == columnas - 2)) {
+					if ((i == 1 && (j == 1 || j == 2)) || (j == 1 && i == 2) || (i == filas - 2 && (j == columnas - 3 || j == columnas - 2)) || (i == filas - 3 && j == columnas - 2)) {//define el camino
 						matriz[i][j] = 2;
 					}
 					else {
@@ -42,7 +42,7 @@ public:
 	}
 	void PintarBase(Graphics^ graficador, Bitmap^ bmpBase) {
 		int X, Y = 0;
-		for (short i = 0; i < filas; i++)
+		for (short i = 0; i < filas; i++)//pinta el camino de con el grass
 		{
 			X = 0;
 			for (short j = 0; j < columnas; j++)

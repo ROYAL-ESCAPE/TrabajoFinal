@@ -1,14 +1,12 @@
 #pragma once
 #include"CControladora.h"
 namespace TrabajoFinal {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
 	/// <summary>
 	/// Resumen de Juego
 	/// </summary>
@@ -41,7 +39,6 @@ namespace TrabajoFinal {
 	private: System::Windows::Forms::Timer^ timer1;
 	protected:
 	private: System::ComponentModel::IContainer^ components;
-
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -84,7 +81,7 @@ namespace TrabajoFinal {
 		Graphics^ graficador = this->CreateGraphics();
 		BufferedGraphicsContext^ espacio = BufferedGraphicsManager::Current;
 		BufferedGraphics^ buffer = espacio->Allocate(graficador, this->ClientRectangle);
-		controladora->CambiarNivel();
+		//controladora->CambiarNivel();
 		controladora->dibujar(buffer->Graphics, bmpBase, bmpSolido, bmpDestruible);
 		buffer->Render(graficador);
 		delete buffer, espacio, graficador;
