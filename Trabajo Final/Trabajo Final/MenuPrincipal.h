@@ -2,12 +2,14 @@
 #include"Juego.h"
 #include"Creditos.h"
 namespace TrabajoFinal {
+
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
 	/// <summary>
 	/// Resumen de MenuPrincipal
 	/// </summary>
@@ -21,6 +23,7 @@ namespace TrabajoFinal {
 			//TODO: agregar código de constructor aquí
 			//
 		}
+
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
@@ -32,6 +35,12 @@ namespace TrabajoFinal {
 				delete components;
 			}
 		}
+
+
+
+
+
+
 	private: System::Windows::Forms::Button^ btn_salir;
 	private: System::Windows::Forms::Button^ btn_creditos;
 	private: System::Windows::Forms::Button^ btn_jugar;
@@ -40,6 +49,10 @@ namespace TrabajoFinal {
 	private: System::Windows::Forms::Button^ btn_instrucciones_aparecer;
 	private: System::Windows::Forms::Button^ btn_instrucciones_desaparecer;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
+
+
+	protected:
+
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -69,10 +82,10 @@ namespace TrabajoFinal {
 			// 
 			// btn_salir
 			// 
-			this->btn_salir->Location = System::Drawing::Point(561, 372);
+			this->btn_salir->Location = System::Drawing::Point(595, 363);
 			this->btn_salir->Margin = System::Windows::Forms::Padding(4);
 			this->btn_salir->Name = L"btn_salir";
-			this->btn_salir->Size = System::Drawing::Size(201, 45);
+			this->btn_salir->Size = System::Drawing::Size(131, 42);
 			this->btn_salir->TabIndex = 8;
 			this->btn_salir->Text = L"Salir";
 			this->btn_salir->UseVisualStyleBackColor = true;
@@ -80,10 +93,10 @@ namespace TrabajoFinal {
 			// 
 			// btn_creditos
 			// 
-			this->btn_creditos->Location = System::Drawing::Point(561, 294);
+			this->btn_creditos->Location = System::Drawing::Point(590, 283);
 			this->btn_creditos->Margin = System::Windows::Forms::Padding(4);
 			this->btn_creditos->Name = L"btn_creditos";
-			this->btn_creditos->Size = System::Drawing::Size(201, 45);
+			this->btn_creditos->Size = System::Drawing::Size(131, 45);
 			this->btn_creditos->TabIndex = 7;
 			this->btn_creditos->Text = L"Creditos";
 			this->btn_creditos->UseVisualStyleBackColor = true;
@@ -91,21 +104,20 @@ namespace TrabajoFinal {
 			// 
 			// btn_jugar
 			// 
-			this->btn_jugar->BackColor = System::Drawing::Color::Transparent;
-			this->btn_jugar->Location = System::Drawing::Point(561, 156);
+			this->btn_jugar->Location = System::Drawing::Point(585, 142);
 			this->btn_jugar->Margin = System::Windows::Forms::Padding(4);
 			this->btn_jugar->Name = L"btn_jugar";
-			this->btn_jugar->Size = System::Drawing::Size(201, 48);
+			this->btn_jugar->Size = System::Drawing::Size(148, 47);
 			this->btn_jugar->TabIndex = 6;
 			this->btn_jugar->Text = L"Jugar";
-			this->btn_jugar->UseVisualStyleBackColor = false;
+			this->btn_jugar->UseVisualStyleBackColor = true;
 			this->btn_jugar->Click += gcnew System::EventHandler(this, &MenuPrincipal::jugar);
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->pictureBox1->Location = System::Drawing::Point(561, 61);
+			this->pictureBox1->Location = System::Drawing::Point(499, 61);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(327, 51);
@@ -118,7 +130,7 @@ namespace TrabajoFinal {
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->pictureBox2->Location = System::Drawing::Point(1099, 61);
+			this->pictureBox2->Location = System::Drawing::Point(977, 61);
 			this->pictureBox2->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(192, 128);
@@ -128,10 +140,10 @@ namespace TrabajoFinal {
 			// 
 			// btn_instrucciones_aparecer
 			// 
-			this->btn_instrucciones_aparecer->Location = System::Drawing::Point(561, 228);
+			this->btn_instrucciones_aparecer->Location = System::Drawing::Point(595, 219);
 			this->btn_instrucciones_aparecer->Margin = System::Windows::Forms::Padding(4);
 			this->btn_instrucciones_aparecer->Name = L"btn_instrucciones_aparecer";
-			this->btn_instrucciones_aparecer->Size = System::Drawing::Size(201, 47);
+			this->btn_instrucciones_aparecer->Size = System::Drawing::Size(136, 37);
 			this->btn_instrucciones_aparecer->TabIndex = 11;
 			this->btn_instrucciones_aparecer->Text = L"Instrucciones";
 			this->btn_instrucciones_aparecer->UseVisualStyleBackColor = true;
@@ -139,10 +151,10 @@ namespace TrabajoFinal {
 			// 
 			// btn_instrucciones_desaparecer
 			// 
-			this->btn_instrucciones_desaparecer->Location = System::Drawing::Point(561, 228);
+			this->btn_instrucciones_desaparecer->Location = System::Drawing::Point(597, 219);
 			this->btn_instrucciones_desaparecer->Margin = System::Windows::Forms::Padding(4);
 			this->btn_instrucciones_desaparecer->Name = L"btn_instrucciones_desaparecer";
-			this->btn_instrucciones_desaparecer->Size = System::Drawing::Size(201, 47);
+			this->btn_instrucciones_desaparecer->Size = System::Drawing::Size(136, 37);
 			this->btn_instrucciones_desaparecer->TabIndex = 12;
 			this->btn_instrucciones_desaparecer->Text = L"Instrucciones";
 			this->btn_instrucciones_desaparecer->UseVisualStyleBackColor = true;
@@ -151,20 +163,19 @@ namespace TrabajoFinal {
 			// pictureBox3
 			// 
 			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox3->Location = System::Drawing::Point(1070, 219);
+			this->pictureBox3->Location = System::Drawing::Point(951, 219);
 			this->pictureBox3->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(288, 171);
+			this->pictureBox3->Size = System::Drawing::Size(256, 171);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox3->TabIndex = 13;
 			this->pictureBox3->TabStop = false;
 			// 
 			// MenuPrincipal
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
-			this->BackColor = System::Drawing::SystemColors::AppWorkspace;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1262, 673);
@@ -176,15 +187,9 @@ namespace TrabajoFinal {
 			this->Controls->Add(this->btn_jugar);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->btn_instrucciones_aparecer);
-			this->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MenuPrincipal";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Royale Escape";
-			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -195,8 +200,9 @@ namespace TrabajoFinal {
 #pragma endregion
 	private: System::Void jugar(System::Object^ sender, System::EventArgs^ e) {
 		Juego^ juego = gcnew Juego();
+		this->Visible = false;
 		juego->ShowDialog();
-		Close();
+		this->Visible = true;
 	}
 	private: System::Void creditos(System::Object^ sender, System::EventArgs^ e) {
 		Creditos^ creditos = gcnew Creditos();

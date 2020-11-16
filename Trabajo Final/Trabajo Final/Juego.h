@@ -1,25 +1,25 @@
 #pragma once
 #include"CControladora.h"
 namespace TrabajoFinal {
+
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
 	/// <summary>
 	/// Resumen de Juego
 	/// </summary>
 	public ref class Juego : public System::Windows::Forms::Form
 	{
 	public:
-		CControladora^ controladora = gcnew CControladora();
-		Bitmap^ bmpSolido = gcnew Bitmap("MATERIALES//ladrillo2.png");
-		Bitmap^ bmpBase = gcnew Bitmap("MATERIALES//grass.png");
-		Bitmap^ bmpDestruible = gcnew Bitmap("MATERIALES//Ladrillo1.png");
+		CControladora^ controladora;
 		Juego(void)
 		{
 			InitializeComponent();
+			this->controladora= gcnew CControladora();
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -39,6 +39,7 @@ namespace TrabajoFinal {
 	private: System::Windows::Forms::Timer^ timer1;
 	protected:
 	private: System::ComponentModel::IContainer^ components;
+
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -63,13 +64,15 @@ namespace TrabajoFinal {
 			// 
 			// Juego
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1262, 673);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ClientSize = System::Drawing::Size(263, 277);
 			this->Name = L"Juego";
 			this->Text = L"Juego";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &Juego::Juego_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Juego::Juego_KeyDown);
+			this->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &Juego::Juego_KeyUp);
 			this->ResumeLayout(false);
 
 		}
@@ -82,9 +85,16 @@ namespace TrabajoFinal {
 		BufferedGraphicsContext^ espacio = BufferedGraphicsManager::Current;
 		BufferedGraphics^ buffer = espacio->Allocate(graficador, this->ClientRectangle);
 		//controladora->CambiarNivel();
-		controladora->dibujar(buffer->Graphics, bmpBase, bmpSolido, bmpDestruible);
+		controladora->Mover(buffer->Graphics);
+		controladora->Mostrar(buffer->Graphics);
 		buffer->Render(graficador);
-		delete buffer, espacio, graficador;
+		//delete buffer, espacio, graficador;
+	}
+	private: System::Void Juego_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		controladora->MoverJugador(true, e->KeyCode);
+	}
+	private: System::Void Juego_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		controladora->MoverJugador(false, e->KeyCode);
 	}
 	};
 }

@@ -96,7 +96,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -129,12 +130,15 @@
   <ItemGroup>
     <ClInclude Include="CControladora.h" />
     <ClInclude Include="CEscenario.h" />
+    <ClInclude Include="Corrupto.h" />
     <ClInclude Include="Creditos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Entidad.h" />
     <ClInclude Include="Juego.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Jugador.h" />
     <ClInclude Include="MenuPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>

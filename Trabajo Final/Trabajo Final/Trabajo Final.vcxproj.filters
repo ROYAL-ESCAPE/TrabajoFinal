@@ -41,6 +41,15 @@
     <ClInclude Include="Creditos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Jugador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entidad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Corrupto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Trabajo Final.cpp">
