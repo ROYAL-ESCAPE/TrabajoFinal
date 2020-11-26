@@ -1,12 +1,12 @@
 #pragma once
-#include"Jugador.h"
 #include<ctime>
 #include<stdlib.h>
 #include<iostream>
 #include<vector>
-#define ANCHO 21
-#define ALTO 11
-#define tamanho_bloque 50
+#include"Jugador.h"
+#define ANCHO 23
+#define ALTO 13
+#define tamanho_bloque 60
 using namespace System::Drawing;
 using namespace std;
 class CEscenario {

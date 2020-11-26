@@ -1,104 +1,163 @@
 #pragma once
-
+#include<ctime>
 #include"Entidad.h"
-#define ANCHO 21
-#define ALTO 11
-#define tamanho_bloque 50
-class CEnemigo : public Entidad {
-
+#define ANCHO 23
+#define ALTO 13
+#define tamanho_bloque 60
+enum TipoEnemigo
+{
+	corrupto,
+	assasins,
+};
+class CEnemigo abstract : public NPC {
+protected:
+	TipoEnemigo tipo;
 public:
-	CEnemigo(Bitmap^ img) : Entidad(img) {
+	CEnemigo(Bitmap^ img) : NPC(img) {
 
 	}
-	virtual void perseguir(CJugador* jugador) {
-		Random^ r = gcnew Random;
-		short confusion = r->Next(1, 10) > 2 ? 1 : -1;
-
-		Point orco_xy = this->get_ubicacion();
-		Point jugador_xy = jugador->get_ubicacion();
-		if (jugador_xy.X - orco_xy.X < 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dx -= 1 * confusion;
-			this->accion = CaminarIzquierda;
-		}
-		else if (jugador_xy.X - orco_xy.X > 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dx += 1 * confusion;
-			this->accion = CaminarDerecha;
-		}
-		if (jugador_xy.Y - orco_xy.Y < 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dy -= 1 * confusion;
-			this->accion = CaminarArriba;
-		}
-		else if (jugador_xy.Y - orco_xy.Y > 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dy += 1 * confusion;
-			this->accion = CaminarAbajo;
-		}
-		delete r;
+	TipoEnemigo get_tipo() {
+		return tipo;
 	}
 };
 class CAsesino :public CEnemigo {
 
 public:
-	CAsesino(Bitmap^ img) : CEnemigo(img) {
-		x = (ANCHO - 2) * tamanho_bloque;
-		y = (ALTO - 2) * tamanho_bloque;
+	CAsesino(Bitmap^ img, vector<vector<int>> matriz) : CEnemigo(img) {
 		dx = dy = 0;
+		
+		//variable = limite_inferior + rand() % (limite_superior +1 - limite_inferior) ;
+		velocidad = 5;
 		accion = CaminarAbajo;
+		this->ancho_recorte = img->Width / 3;
+		this->alto_recorte = img->Height / 4;
+		tipo = assasins;
+		do
+		{
+			this->x = rand() % (ANCHO);
+			this->y = rand() % (ALTO);
+		} while ((matriz[this->y][this->x] != 0));
+		this->x *= 60;
+		this->y *= 60;
 	}
-	void perseguir(CJugador* jugador) override{
-		Random^ r = gcnew Random;
-		short confusion = r->Next(1, 10) > 2 ? 1 : -1;
-		Point orco_xy = this->get_ubicacion();
-		Point jugador_xy = jugador->get_ubicacion();
-		if (jugador_xy.X - orco_xy.X < 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dx -= 1 * confusion;
-			this->accion = CaminarIzquierda;
-		}
-		else if (jugador_xy.X - orco_xy.X > 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dx += 1 * confusion;
-			this->accion = CaminarDerecha;
-		}
-		if (jugador_xy.Y - orco_xy.Y < 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dy -= 1 * confusion;
-			this->accion = CaminarArriba;
-		}
-		else if (jugador_xy.Y - orco_xy.Y > 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dy += 1 * confusion;
-			this->accion = CaminarAbajo;
-		}
-		delete r;
+	void Mover(Graphics^ g, vector<vector<int>> arr) override
+	{
+		Colision(arr);
+			x += dx;
+			y += dy;
 	}
 };
 class CCorrupto: public CEnemigo {
 
 public:
-	CCorrupto(Bitmap^ img) : CEnemigo(img){
-		x = (ANCHO - 2) * tamanho_bloque+5;
-		y = (ALTO - 3) * tamanho_bloque+5;
+	CCorrupto(Bitmap^ img, vector<vector<int>> matriz) : CEnemigo(img){
 		dx = dy = 0;
+		
+		velocidad = 5;
 		accion = CaminarAbajo;
+		ancho_recorte = img->Width / 3;
+		alto_recorte = img->Height / 4;
+		tipo = corrupto;
+		do
+		{
+			this->x = rand() % (ANCHO);
+			this->y = rand() % (ALTO);
+		} while ((matriz[this->y][this->x] != 0));
+		this->x *= 60;
+		this->y *= 60;
 	}
-	void perseguir(CJugador* jugador) override {
-		Random^ r = gcnew Random;
-		short confusion = r->Next(1, 10) > 2 ? 1 : -1;
+	void Mover(Graphics^ g, vector<vector<int>> arr) override
+	{
+		Colision(arr);
+			x += dx;
+			y += dy;
+	}
+};
 
-		Point orco_xy = this->get_ubicacion();
-		Point jugador_xy = jugador->get_ubicacion();
-		if (jugador_xy.X - orco_xy.X < 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dx -= 1 * confusion;
-			this->accion = CaminarIzquierda;
+
+class Enemigos
+{
+	vector<CEnemigo*> enemigos;
+public:
+	void Agregar(CEnemigo* enemigo)
+	{
+		enemigos.push_back(enemigo);
+	}
+	void Eliminar(int pos)
+	{
+		enemigos.erase(enemigos.begin() + pos);
+	}
+	int Size()
+	{
+		return enemigos.size();
+	}
+	CEnemigo* Get(int pos)
+	{
+		return enemigos[pos];
+	}
+	bool Colision(CAliado* aliado)
+	{
+		for (int i = 0; i < enemigos.size(); i++)
+		{
+			if (enemigos[i]->Area().IntersectsWith(aliado->Area())){
+				return true;
+			}
 		}
-		else if (jugador_xy.X - orco_xy.X > 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dx += 1 * confusion;
-			this->accion = CaminarDerecha;
+
+		return false;
+	}
+	bool Colision(CJugador* jg)
+	{
+		for each (CEnemigo * E in enemigos)
+			if (E->Area().IntersectsWith(jg->Area()))
+				return true;
+
+		return false;
+	}
+	void Mover(Graphics^ g, vector<vector<int>> arr,  CAliado* aliados, bool nivel2)//PARA ALIADOS
+	{
+		for each (CEnemigo * E in enemigos)
+		{
+			if (nivel2==false) {
+				if (E->get_tipo() == corrupto && aliados->get_modo()==Aleatorio) {
+					if (E->GetX() % 60 == 0 && E->GetY() % 60 == 0) {
+						E->seguir(g, E->GetX() / tamanho_bloque, E->GetY() / tamanho_bloque, aliados->GetX() / tamanho_bloque, aliados->GetY() / tamanho_bloque, arr, E, aliados);
+					}
+					E->Mover(g, arr);
+				}
+			}
 		}
-		if (jugador_xy.Y - orco_xy.Y < 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dy -= 1 * confusion;
-			this->accion = CaminarArriba;
+	}	
+	void Mover(Graphics^ g, vector<vector<int>> arr,  CJugador* jg, bool nivel2)//PARA JUGADOR
+	{
+		for each (CEnemigo * E in enemigos)
+		{
+			
+				if (E->get_tipo() == assasins && nivel2 == true) {
+					if (E->GetX() % 60 == 0 && E->GetY() % 60 == 0) {
+						E->seguir(g, E->GetX() / tamanho_bloque, E->GetY() / tamanho_bloque, jg->GetX() / tamanho_bloque, jg->GetY() / tamanho_bloque, arr, E, jg);
+					}
+					E->Mover(g, arr);
+				}
+				if (E->get_tipo() == corrupto ) {
+					if (E->GetX() % 60 == 0 && E->GetY() % 60 == 0) {
+						E->seguir(g, E->GetX() / tamanho_bloque, E->GetY() / tamanho_bloque, jg->GetX() / tamanho_bloque, jg->GetY() / tamanho_bloque, arr, E, jg);
+					}
+					E->Mover(g, arr);
+				}
+			
 		}
-		else if (jugador_xy.Y - orco_xy.Y > 0 && jugador_xy.X != orco_xy.X && jugador_xy.Y != orco_xy.Y) {
-			this->dy += 1 * confusion;
-			this->accion = CaminarAbajo;
+	}
+	void Mostrar(Graphics^ g, Bitmap^ img, bool nivel2, Bitmap^ img_2)
+	{
+		for each (CEnemigo * E in enemigos)
+		{
+			if (nivel2==true && E->get_tipo()==assasins) {
+				E->Mostrar(g, img_2);
+			}
+			if(E->get_tipo()==corrupto){
+				E->Mostrar(g, img);
+			}
 		}
-		delete r;
 	}
 };

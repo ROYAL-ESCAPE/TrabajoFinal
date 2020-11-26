@@ -34,10 +34,11 @@ namespace TrabajoFinal {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 	protected:
 	private: System::Windows::Forms::Label^ txt_title_creditos;
-	private: System::Windows::Forms::PictureBox^ pictureBox2_atras;
+	private: System::Windows::Forms::Label^ label1;
+
 
 	private:
 		/// <summary>
@@ -53,22 +54,9 @@ namespace TrabajoFinal {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Creditos::typeid));
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->txt_title_creditos = (gcnew System::Windows::Forms::Label());
-			this->pictureBox2_atras = (gcnew System::Windows::Forms::PictureBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2_atras))->BeginInit();
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Location = System::Drawing::Point(1106, 21);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(120, 107);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 0;
-			this->pictureBox1->TabStop = false;
 			// 
 			// txt_title_creditos
 			// 
@@ -77,40 +65,38 @@ namespace TrabajoFinal {
 			this->txt_title_creditos->Font = (gcnew System::Drawing::Font(L"Sitka Subheading", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txt_title_creditos->ForeColor = System::Drawing::Color::Cornsilk;
-			this->txt_title_creditos->Location = System::Drawing::Point(576, 21);
-			this->txt_title_creditos->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->txt_title_creditos->Location = System::Drawing::Point(432, 17);
 			this->txt_title_creditos->Name = L"txt_title_creditos";
-			this->txt_title_creditos->Size = System::Drawing::Size(178, 58);
+			this->txt_title_creditos->Size = System::Drawing::Size(145, 47);
 			this->txt_title_creditos->TabIndex = 1;
 			this->txt_title_creditos->Text = L"Creditos";
 			this->txt_title_creditos->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
-			// pictureBox2_atras
+			// label1
 			// 
-			this->pictureBox2_atras->Location = System::Drawing::Point(28, 15);
-			this->pictureBox2_atras->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->pictureBox2_atras->Name = L"pictureBox2_atras";
-			this->pictureBox2_atras->Size = System::Drawing::Size(79, 64);
-			this->pictureBox2_atras->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox2_atras->TabIndex = 2;
-			this->pictureBox2_atras->TabStop = false;
-			this->pictureBox2_atras->Click += gcnew System::EventHandler(this, &Creditos::pictureBox2_atras_Click);
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::Control;
+			this->label1->Location = System::Drawing::Point(201, 274);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(670, 132);
+			this->label1->TabIndex = 3;
+			this->label1->Text = L"u202013066 Christian Joel Cutipa Cañapataña \r\nu201721662 Jairo Andree Alvarez San"
+				L"chez \r\nu202012087 Omar David Valle Guzmán \r\nu20201a291 Cristopher Rondon Añaños";
 			// 
 			// Creditos
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1262, 673);
-			this->Controls->Add(this->pictureBox2_atras);
+			this->ClientSize = System::Drawing::Size(946, 547);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->txt_title_creditos);
-			this->Controls->Add(this->pictureBox1);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"Creditos";
 			this->Text = L"Creditos";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2_atras))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
